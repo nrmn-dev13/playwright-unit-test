@@ -7,7 +7,8 @@ export default defineConfig({
     tsconfigPaths: true, // supaya import "@/lib/..." bisa dibaca
   },
   test: {
-    environment: "jsdom", // pakai browser tiruan
-    globals: true,        // agar Testing Library otomatis membersihkan DOM setelah tiap test
+    environment: "jsdom",
+    globals: true,
+    include: ["src/**/*.test.{ts,tsx}"], // jangan jalankan test Playwright di folder e2e
   },
 });
